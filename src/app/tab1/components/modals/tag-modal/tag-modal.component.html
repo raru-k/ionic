@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tag Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for(tag of tags; track tag;) {
+      <ion-item>
+        <ion-button slot="end" [fill]="tag == selectedTag() ? 'solid' : 'outline'"  (click)="selectTag(tag)">{{tag}}</ion-button>
+      </ion-item>
+    }
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
